@@ -1,0 +1,164 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a CV template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0.7,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{\textbf{Andy Pang}} \\[7.5pt]
+\href{https://github.com/andypang1010}{\raisebox{-0.05\height}\faGithub\ GitHub} \ $|$ \ 
+\href{https://www.linkedin.com/in/andypang1010/}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} \ $|$ \ 
+\href{https://andypang.me}{\raisebox{-0.05\height}\faGlobe \ andypang.me} \ $|$ \ 
+\href{mailto:andypang1010@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ andypang1010@gmail.com} \ $|$ \ 
+\href{tel:+3475563499}{\raisebox{-0.05\height}\faMobile \ +1 (347) 556-3499} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Bachelor of Arts, \textbf{Cornell University}  & \hfill \normalsize 2021 - Present \\
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] \textbf{GPA:} 3.6 / 4.0
+        \item[--] \textbf{Major:} Computer Science, Physics
+        \item[--] \textbf{Minor:} Business
+        \item[--] \textbf{Relevant Courses:} Machine Learning, Functional Programming, Multivariable Calculus, Discrete Mathematics, Linear Algebra, Object-Oriented Programming \& Data Structure
+    \end{itemize}
+    \end{minipage}
+}
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Co-Founder, Tech Lead - Aiglon Development Team} & \hfill Jan 2020 - May 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed a web-based pre-ordering app for community café using Google Apps Script and MySQL
+        \item[--] Built a mobile safety app that allows residential staff to check in with students when they leave the campus area with Swift and ChatSDK Framework
+        \item[--] Lead a group of skilled developers to build apps to serve 400+ students and staff
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Lumiere Movies Tracker} & \hfill (Swift UIKit / Firebase) \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Created interactive view controllers with \textbf{Swift UIKit} that audtomatically fetches, displays, and update user-related data from \textbf{Firebase Firestore}
+        \item[--] Implemented user authentication and validation system using \textbf{Firebase Auth} to allow for \textbf{CRUD operations} on the database
+         \item[--] Designed the user interface on Figma and launched final product on App Store
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+\\
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Pac-Man 3D Game} & \hfill (Unity 3D) \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Recreated the classic Pac-Man arcade game that can be played natively on Desktops
+        \item[--] Implemented AI enemy ghosts that are controlled by Unity NavMesh Agents that tactically follow the player
+        \item[--] Used Post-Processing and Shader Graphs to create visual effects for a more immersive gameplay
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Programming:} &  \normalsize{Java, Python, C\#, JavaScript, C++, Swift, Dart, OCaml}\\
+\textbf{Web \& Database:} &  \normalsize{HTML, CSS, MySQL, Firebase}\\
+\textbf{Frameworks:} &  \normalsize{ReactJS, Flutter, React Native, Swift UIKit, Bootstrap}\\
+\textbf{Technologies}  &  \normalsize{VSCode, Visual Studio, Xcode, Unity, Eclipse, \LaTeX, Bash, Git}\\  
+\textbf{Languages}  &  \normalsize{English, Cantonese, Mandarin, French}\\
+\end{tabularx}
+
+\end{document}
